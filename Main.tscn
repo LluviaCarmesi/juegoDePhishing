@@ -1,21 +1,75 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Bubble.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GoodMail.tscn" type="PackedScene" id=4]
+[ext_resource path="res://BigMob.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Seaweed3.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Rocks.png" type="Texture" id=7]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/clipart895325.png" type="Texture" id=10]
+[ext_resource path="res://Assets/clipart895325No2.png" type="Texture" id=11]
+[ext_resource path="res://GameoverOne.wav" type="AudioStream" id=12]
+[ext_resource path="res://Pause2.gd" type="Script" id=13]
+[ext_resource path="res://Assets/FastandFuriousMain.ogg" type="AudioStream" id=14]
+[ext_resource path="res://Assets/kisspng-drawing-anglerfish-cartoon-angler-fish-by-luckysevenk42-on-deviantart-5b661cd1dd5ca0.7437758615334187059067.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Xolonium-Regular.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://Assets/kisspng-computer-icons-loudspeaker-digital-audio-sound-lk-5b494d8644cda7.3802071515315306302818.png" type="Texture" id=17]
+[ext_resource path="res://Assets/pause-128.png" type="Texture" id=18]
 
 [sub_resource type="Curve2D" id=1]
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 5.91577, 12.2158, 0, 0, 0, 0, 6.47449, 15.2335, 0, 0, 0, 0, 1424.34, 1.5343, 0, 0, 0, 0, 1427.76, 802.934, 0, 0, 0, 0, 3.04968, 799.51, 0, 0, 0, 0, 5.91577, 12.2158 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1000, 560, 0, 0, 0, 0, 10, 560 )
 }
+
+[sub_resource type="Curve2D" id=2]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0, 1000, 560, 0, 0, 0, 0, 0, 560, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="Curve2D" id=3]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0, 1000, 560, 0, 0, 0, 0, 0, 560, 0, 0, 0, 0, 0, 0 )
+}
+
+[sub_resource type="Curve2D" id=4]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0, 1000, 560, 0, 0, 0, 0, 0, 560 )
+}
+
+[sub_resource type="DynamicFont" id=5]
+
+size = 64
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 16 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=6]
+
+size = 48
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 16 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
 Mob = ExtResource( 2 )
+Bubble = ExtResource( 3 )
+GoodMail = ExtResource( 4 )
+BigMob = ExtResource( 5 )
 
 [node name="Background" type="ColorRect" parent="." index="0"]
 
@@ -23,54 +77,113 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1427.0
-margin_bottom = 813.0
+margin_top = -1.0
+margin_right = 1000.0
+margin_bottom = 560.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0, 0.145508, 0.582031, 1 )
+color = Color( 0.238647, 0.358673, 0.71875, 1 )
 
-[node name="Player" parent="." index="1" instance=ExtResource( 3 )]
+[node name="Seaweed1" type="Sprite" parent="." index="1"]
 
-[node name="MobTimer" type="Timer" parent="." index="2"]
+position = Vector2( 70, 520 )
+scale = Vector2( 0.111948, 0.0658143 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Seaweed2" type="Sprite" parent="." index="2"]
+
+position = Vector2( 770, 520 )
+scale = Vector2( 0.111948, 0.065814 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Seaweed3" type="Sprite" parent="." index="3"]
+
+position = Vector2( 330, 520 )
+scale = Vector2( 0.111948, 0.065814 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Seaweed4" type="Sprite" parent="." index="4"]
+
+position = Vector2( 990, 520 )
+scale = Vector2( 0.111948, 0.065814 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Seaweed5" type="Sprite" parent="." index="5"]
+
+position = Vector2( 550, 520 )
+scale = Vector2( 0.111948, 0.065814 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Rocks" type="Sprite" parent="." index="6"]
+
+position = Vector2( 190, 560 )
+scale = Vector2( 0.0636175, 0.0614983 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Rocks2" type="Sprite" parent="." index="7"]
+
+position = Vector2( 460, 550 )
+scale = Vector2( 0.063617, 0.061498 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Rocks3" type="Sprite" parent="." index="8"]
+
+position = Vector2( 660, 560 )
+scale = Vector2( 0.063617, 0.061498 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Rocks4" type="Sprite" parent="." index="9"]
+
+position = Vector2( 880, 550 )
+scale = Vector2( 0.063617, 0.061498 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player" parent="." index="10" instance=ExtResource( 8 )]
+
+[node name="MobTimer" type="Timer" parent="." index="11"]
 
 process_mode = 1
 wait_time = 0.7
 one_shot = false
 autostart = false
 
-[node name="ScoreTimer" type="Timer" parent="." index="3"]
+[node name="ScoreTimer" type="Timer" parent="." index="12"]
 
 process_mode = 1
-wait_time = 10.0
+wait_time = 8.0
 one_shot = false
 autostart = false
 
-[node name="StartTimer" type="Timer" parent="." index="4"]
+[node name="StartTimer" type="Timer" parent="." index="13"]
 
 process_mode = 1
-wait_time = 2.0
+wait_time = 0.5
 one_shot = true
 autostart = false
 
-[node name="Position2D" type="Position2D" parent="." index="5"]
-
-position = Vector2( 720, 400 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="MobPath" type="Path2D" parent="." index="6"]
+[node name="BubblePath" type="Path2D" parent="." index="14"]
 
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 curve = SubResource( 1 )
-_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
 
-[node name="MobSpawn" type="PathFollow2D" parent="MobPath" index="0"]
+[node name="BubbleSpawn" type="PathFollow2D" parent="BubblePath" index="0"]
 
-position = Vector2( 5.91577, 12.2158 )
-rotation = 0.686709
+position = Vector2( 1000, 560 )
+rotation = 3.14159
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
@@ -79,7 +192,361 @@ cubic_interp = true
 loop = true
 lookahead = 4.0
 
-[node name="HUD" parent="." index="7" instance=ExtResource( 4 )]
+[node name="Position2D" type="Position2D" parent="." index="15"]
+
+position = Vector2( 500, 281 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="MobPath" type="Path2D" parent="." index="16"]
+
+self_modulate = Color( 0.5, 0.6, 1, 0.7 )
+curve = SubResource( 2 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="MobSpawn" type="PathFollow2D" parent="MobPath" index="0"]
+
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="GoodMailPath" type="Path2D" parent="." index="17"]
+
+self_modulate = Color( 0.5, 0.6, 1, 0.7 )
+curve = SubResource( 3 )
+
+[node name="GoodMailSpawn" type="PathFollow2D" parent="GoodMailPath" index="0"]
+
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="BigMobPath" type="Path2D" parent="." index="18"]
+
+self_modulate = Color( 0.5, 0.6, 1, 0.7 )
+curve = SubResource( 4 )
+
+[node name="BigMobSpawn" type="PathFollow2D" parent="BigMobPath" index="0"]
+
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="HUD" parent="." index="19" instance=ExtResource( 9 )]
+
+[node name="MoveRight" type="TouchScreenButton" parent="." index="20"]
+
+visible = false
+position = Vector2( 255.101, 395.551 )
+rotation = 3.14159
+scale = Vector2( 0.138333, 0.204036 )
+normal = ExtResource( 10 )
+pressed = ExtResource( 11 )
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = true
+action = "ui_right"
+visibility_mode = 1
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="MoveLeft" type="TouchScreenButton" parent="." index="21"]
+
+visible = false
+position = Vector2( 20, 340 )
+scale = Vector2( 0.138333, 0.204036 )
+normal = ExtResource( 10 )
+pressed = ExtResource( 11 )
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = true
+action = "ui_left"
+visibility_mode = 1
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="MoveUp" type="TouchScreenButton" parent="." index="22"]
+
+visible = false
+position = Vector2( 163.787, 241.36 )
+rotation = 1.5708
+scale = Vector2( 0.138333, 0.204036 )
+normal = ExtResource( 10 )
+pressed = ExtResource( 11 )
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = true
+action = "ui_up"
+visibility_mode = 1
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="MoveDown" type="TouchScreenButton" parent="." index="23"]
+
+visible = false
+position = Vector2( 105.837, 484.56 )
+rotation = 4.71239
+scale = Vector2( 0.138333, 0.204036 )
+normal = ExtResource( 10 )
+pressed = ExtResource( 11 )
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = true
+action = "ui_down"
+visibility_mode = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="BubbleTimer" type="Timer" parent="." index="24"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = false
+autostart = false
+_sections_unfolded = [ "Pause" ]
+
+[node name="Death" type="AudioStreamPlayer" parent="." index="25"]
+
+stream = ExtResource( 12 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+_sections_unfolded = [ "Pause" ]
+
+[node name="BubbleTimer2" type="Timer" parent="." index="26"]
+
+process_mode = 1
+wait_time = 1.5
+one_shot = false
+autostart = false
+_sections_unfolded = [ "Pause" ]
+
+[node name="GoodMailTimer" type="Timer" parent="." index="27"]
+
+process_mode = 1
+wait_time = 1.5
+one_shot = false
+autostart = false
+
+[node name="BigMobTimer" type="Timer" parent="." index="28"]
+
+process_mode = 1
+wait_time = 6.0
+one_shot = false
+autostart = false
+
+[node name="DeathTimer" type="Timer" parent="." index="29"]
+
+process_mode = 1
+wait_time = 6.5
+one_shot = false
+autostart = false
+
+[node name="Pause2" type="CanvasLayer" parent="." index="30"]
+
+pause_mode = 2
+layer = 100
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 13 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="ColorRect" type="ColorRect" parent="Pause2" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1110.0
+margin_bottom = 610.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 0.535922 )
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility" ]
+
+[node name="GamePlay" type="AudioStreamPlayer" parent="Pause2" index="1"]
+
+stream = ExtResource( 14 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+_sections_unfolded = [ "Pause" ]
+
+[node name="Angler" type="Sprite" parent="Pause2" index="2"]
+
+visible = false
+position = Vector2( 886.75, 305.125 )
+scale = Vector2( 0.432729, 0.407152 )
+z_index = 3
+texture = ExtResource( 15 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="Angler2" type="Sprite" parent="Pause2" index="3"]
+
+visible = false
+position = Vector2( 222.899, 305.125 )
+rotation = 3.14159
+scale = Vector2( 0.432729, -0.407152 )
+z_index = 3
+texture = ExtResource( 15 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Label" type="Label" parent="Pause2" index="4"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 430.0
+margin_top = 320.0
+margin_right = 680.0
+margin_bottom = 398.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.85098, 0.458824, 0, 1 )
+text = "Paused"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Visibility", "custom_colors", "custom_constants", "custom_fonts" ]
+
+[node name="Timer" type="Timer" parent="Pause2" index="5"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="Timer2" type="Timer" parent="Pause2" index="6"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="Label2" type="Label" parent="Pause2" index="7"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 80.0
+margin_top = 90.0
+margin_right = 1029.0
+margin_bottom = 168.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.85098, 0.458824, 0, 1 )
+text = "Are you Ready for the Quiz?"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="Bubble" type="Sprite" parent="Pause2" index="8"]
+
+[node name="Bubble2" type="Sprite" parent="Pause2" index="9"]
+
+[node name="Audio" type="Sprite" parent="Pause2" index="10"]
+
+position = Vector2( 30, 530 )
+scale = Vector2( 0.13, 0.14 )
+texture = ExtResource( 17 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Mute" type="TouchScreenButton" parent="Pause2" index="11"]
+
+position = Vector2( 0, 490 )
+scale = Vector2( 0.13, 0.16 )
+normal = ExtResource( 17 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "mute"
+visibility_mode = 1
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Pause" type="TouchScreenButton" parent="Pause2" index="12"]
+
+visible = false
+position = Vector2( 70, 500 )
+scale = Vector2( 0.46875, 0.46875 )
+normal = ExtResource( 18 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "pause"
+visibility_mode = 1
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Cruz" type="ColorRect" parent="Pause2" index="13"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 17.0
+margin_top = 512.0
+margin_right = 67.0
+margin_bottom = 522.0
+rect_rotation = 45.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 1 )
+_sections_unfolded = [ "Anchor", "Margin", "Material", "Rect", "Visibility" ]
 
 [connection signal="hit" from="Player" to="." method="game_over"]
 
@@ -90,5 +557,13 @@ lookahead = 4.0
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
 
 [connection signal="start_game" from="HUD" to="." method="new_game"]
+
+[connection signal="timeout" from="BubbleTimer" to="." method="_on_BubbleTimer_timeout"]
+
+[connection signal="timeout" from="BubbleTimer2" to="." method="_on_BubbleTimer2_timeout"]
+
+[connection signal="timeout" from="GoodMailTimer" to="." method="_on_GoodMailTimer_timeout"]
+
+[connection signal="timeout" from="BigMobTimer" to="." method="_on_BigMobTimer_timeout"]
 
 

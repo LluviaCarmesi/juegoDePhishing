@@ -6,10 +6,13 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 56.3665, 27.902 )
+extents = Vector2( 46.4462, 27.902 )
 
 [node name="Player" type="Area2D"]
 
+position = Vector2( -11.9396, -11.936 )
+scale = Vector2( 0.626888, 0.627001 )
+z_index = 1
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -18,19 +21,20 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-SPEED = 400
+_sections_unfolded = [ "Pause", "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 position = Vector2( -5.72565, -0.789062 )
-scale = Vector2( 0.0857775, 0.112438 )
+scale = Vector2( 0.065777, 0.082438 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Animation", "Material", "Offset", "Pause", "Region", "Transform", "Visibility", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( -5.16378, -0.397217 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Pause" ]
 
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
 

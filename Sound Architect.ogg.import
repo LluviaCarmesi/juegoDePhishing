@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Sound Architect.ogg-d486edbfbf1589922aebe0f3ab29767f.oggstr"
+
+[deps]
+
+source_file="res://Sound Architect.ogg"
+dest_files=[ "res://.import/Sound Architect.ogg-d486edbfbf1589922aebe0f3ab29767f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

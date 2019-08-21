@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/FastandFuriousMain.ogg-8d69183527c85226fd02590bedc23cdf.oggstr"
+
+[deps]
+
+source_file="res://Assets/FastandFuriousMain.ogg"
+dest_files=[ "res://.import/FastandFuriousMain.ogg-8d69183527c85226fd02590bedc23cdf.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
